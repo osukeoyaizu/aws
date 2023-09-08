@@ -1,0 +1,1802 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:dt = 
+"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=ProgId content=OneNote.File>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK id=Main-File 
+rel=Main-File href="AWS2.htm"><LINK rel=File-List 
+href="AWS2.files/filelist.xml"></HEAD>
+<BODY lang=ja style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック">
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.249in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>7</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:32</P></DIV>
+<DIV 
+style="WIDTH: 7.249in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">・</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>WordPress</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>用のデータベースを作成</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>WordPress</SPAN><SPAN 
+lang=ja>をインストール</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>WordPress</SPAN><SPAN lang=ja>を設定</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・なぜ</SPAN><SPAN lang=en-US>WordPress</SPAN><SPAN 
+lang=ja>のサイトが表示される？</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>TCP/IP</SPAN><SPAN lang=ja>について学ぶ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>HTTP</SPAN><SPAN lang=ja>について学ぶ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>TCP</SPAN><SPAN lang=ja>と</SPAN><SPAN 
+lang=en-US>UDP</SPAN><SPAN lang=ja>について学ぶ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>IP</SPAN><SPAN lang=ja>について学ぶ</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD53C(1).tmp" width=691 
+height=381></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 3.087in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.645in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">作業内容</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:35</P></DIV>
+<DIV 
+style="WIDTH: 3.087in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">①</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>WordPress</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>用のデータベース作成</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'> (</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>データベース作成</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>ユーザー作成</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>ユーザーに権限付与</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>②</SPAN><SPAN lang=en-US>WordPress</SPAN><SPAN lang=ja>インストール</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>③</SPAN><SPAN lang=en-US>WordPress</SPAN><SPAN 
+lang=ja>の設定</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.401in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.396in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>mysql</SPAN><SPAN lang=ja>コマンド</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:43</P></DIV>
+<DIV 
+style="WIDTH: 7.401in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">接続</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">mysql -h <SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">osuke-oyaizu-web.cnkcerumhjjp.ap-northeast-1.rds.amazonaws.com</SPAN> 
+-u admin -p </P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">Passw0rd</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">データベース作成</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CREATE DATABASE 
+osuke_oyaizu DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in 0in 0in 0.375in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">※</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>DEFAULT CHARACTER SET </SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>デフォルト文字コード</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>※</SPAN><SPAN lang=en-US>COLLATE </SPAN><SPAN 
+lang=ja>文字列の比較方法　</SPAN><SPAN lang=en-US>utf8:</SPAN><SPAN 
+lang=ja>文字列</SPAN><SPAN lang=en-US> general:</SPAN><SPAN lang=ja>多言語</SPAN><SPAN 
+lang=en-US> ci:</SPAN><SPAN lang=ja>大文字と小文字を区別しない</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">表示</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">show databases;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ユーザー作成</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">create user 
+'osuke_oyaizu'@'%' identified by 'password';</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in 0in 0in 0.375in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">※</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>@</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>以降は接続元のホスト</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'> %:</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>どこでも</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">権限付与</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">grant all on 
+osuke_oyaizu.* to 'osuke_oyaizu'@'%';</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in 0in 0in 0.375in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">※</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>all:</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>すべての権限付与</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>※</SPAN><SPAN lang=en-US>&lt;DB&gt;.*</SPAN><SPAN 
+lang=ja>データベースのテーブルを全て</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in 0in 0in 0.375in"><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>※</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">to 'osuke_oyaizu'@'%'</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>:</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>ユーザーに付与</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">設定反映</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">flush 
+privileges;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ユーザー確認</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">select user , host 
+from mysql.user;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD53F(1).tmp" width=279 
+height=174></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ユーザーログイン</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">mysql -h 
+osuke-oyaizu-web.cnkcerumhjjp.ap-northeast-1.rds.amazonaws.com -u osuke_oyaizu 
+-p </P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>password</SPAN><SPAN 
+lang=ja>　←　作成した際に設定したパスワード</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.401in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.933in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>WordPress</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">14:22</P></DIV>
+<DIV 
+style="WIDTH: 7.401in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><A 
+href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/hosting-wordpress-aml-2023.html">WordPressインストール方法</A></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">dnf install wget 
+php-mysqlnd httpd php-fpm php-mysqli mariadb105-server php-json php php-devel 
+-y</P>
+<P style="MARGIN: 0in"><SPAN lang=ja 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック">wget </SPAN><A 
+href="https://wordpress.org/latest.tar.gz"><SPAN lang=ja 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック">https://wordpress.org/latest.tar.gz</SPAN></A><SPAN 
+lang=ja style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック">　</SPAN><SPAN lang=ja 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 游ゴシック">※</SPAN><SPAN lang=en-US 
+style='FONT-SIZE: 9pt; FONT-FAMILY: "Yu Gothic"'>wget</SPAN><SPAN lang=ja 
+style='FONT-SIZE: 9pt; FONT-FAMILY: "Yu Gothic"'>コマンド：</SPAN><SPAN lang=en-US 
+style='FONT-SIZE: 9pt; FONT-FAMILY: "Yu Gothic"'>url</SPAN><SPAN lang=ja 
+style='FONT-SIZE: 9pt; FONT-FAMILY: "Yu Gothic"'>を指定してファイルをダウンロードする</SPAN></P>
+<P style="FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN style="FONT-SIZE: 11pt">tar 
+-xzf latest.tar.gz　</SPAN><SPAN style="FONT-SIZE: 9pt">←　解凍コマンド</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD552(1).tmp" width=264 
+height=37></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>apach</SPAN><SPAN lang=ja>が見れる場所に移動させる</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">cd wordpress/</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">sudo cp -r * 
+/var/www/html/</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">sudo chown 
+apach:apache /var/www/html/ -R</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>※</SPAN><SPAN lang=en-US>apache:apache</SPAN><SPAN 
+lang=ja>　所有者</SPAN><SPAN lang=en-US>:</SPAN><SPAN lang=ja>所有グループを</SPAN><SPAN 
+lang=en-US>apache</SPAN><SPAN lang=ja>に変更</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>※</SPAN><SPAN lang=en-US>-R</SPAN><SPAN lang=ja>　</SPAN><SPAN 
+lang=en-US>/var/www/html/</SPAN><SPAN lang=ja>以下をすべて</SPAN><SPAN 
+lang=en-US>apache</SPAN><SPAN lang=ja>に変更する</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">sudo systemctl 
+status httpd.service</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>※サービスの状態確認　</SPAN><SPAN lang=en-US>active(running)</SPAN><SPAN 
+lang=ja>←起動中</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">sudo systemctl </SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>restart</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック"> httpd.service</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">インスタンスを再起動させておく</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ブラウザから</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><A href="https://＜ドメイン名＞"><SPAN 
+lang=en-US style='FONT-FAMILY: "Yu Gothic"'>https://</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>＜ドメイン名</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">＞</SPAN></A></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>WordPress</SPAN><SPAN lang=ja>設定画面が出てくる</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD564(1).tmp" width=361 
+height=219></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>※データベース・ホストは「</SPAN><SPAN lang=en-US>RDS</SPAN><SPAN 
+lang=ja>」→「データベース」→「エンドポイント」をコピーして貼り付け</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ログインパスワード</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">gKoK0LbJ$IzXPw8RkP</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">hJjL2iv19msEpEoyKG</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">Q(Chq#z7at*o6s^Nck</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 10.509in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.368in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>仕組み</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:01</P></DIV>
+<TABLE 
+style="BORDER-LEFT-WIDTH: 0pt; BORDER-RIGHT-WIDTH: 0pt; WIDTH: 10.509in; BORDER-BOTTOM-WIDTH: 0pt; MARGIN-TOP: 0.225in; BORDER-COLLAPSE: collapse; DIRECTION: ltr; MARGIN-LEFT: 0in; BORDER-TOP-WIDTH: 0pt" 
+cellSpacing=0 cols=3 cellPadding=0 border=0 valign="top">
+  <TBODY>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 7.474in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 2.491in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 0.543in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.27in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="HEIGHT: 4.055in; WIDTH: 7.474in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top rowSpan=3>
+      <P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD567(1).tmp" width=713 
+      height=385></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.27in; WIDTH: 2.491in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.27in; WIDTH: 0.543in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.518in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.518in; WIDTH: 2.491in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="HEIGHT: 0.518in; WIDTH: 0.543in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+      <P 
+  style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 3.265in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 3.265in; WIDTH: 2.491in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 3.265in; WIDTH: 0.543in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR></TBODY></TABLE></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 8.111in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.481in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>TCP/IP</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:11</P></DIV>
+<DIV 
+style="WIDTH: 8.111in; MARGIN-TOP: 0.152in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">プロトコル</SPAN>とは、コンピューター同士がネットワークを利用して通信するために決められた約束ごと</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>HTTP</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>TCP</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>UDP</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>IP</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>SMTP</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>IPX</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>[</SPAN><SPAN lang=ja>プロトコルが必要な理由</SPAN><SPAN lang=en-US>]</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>メーカーや</SPAN><SPAN lang=en-US>OS</SPAN><SPAN 
+lang=ja>が違うコンピューター同士が通信するためには、同じ仕様でやりとりする必要がある</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→プロトコルがある、同じプロトコルを使用するという同意があるからこそ、様々なコンピューター同士</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>　が通信できている</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>[TCP/IP]</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD57A(1).tmp" width=623 
+height=278></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD58D(1).tmp" width=623 
+height=327></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>アプリケーション層</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>一つ下のトランスポート層にコネクションの確立を指示する→メールのデータをトランスポート層に送信</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>トランスポート層</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>コネクションを確立する　</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>通信が終わったらコネクションを切断する（アプリケーションの指示）</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>どのアプリケーションと通信するか指定する</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>データが届いてい場合は再送する</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>データにヘッダーをつけてネットワーク層へ</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ネットワーク層</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>A</SPAN><SPAN lang=ja>からＢまでパケットを届ける</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>ヘッダーには受信側</SPAN><SPAN lang=en-US>IP</SPAN><SPAN 
+lang=ja>アドレス情報などが入る</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>ルーティング情報をもとに次にデータを渡すルーターやコンピューターを決定</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ネットワークインターフェース層</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>NIC</SPAN><SPAN lang=ja>を動かすためのデバイスドライバ</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>NIC:LAN</SPAN><SPAN lang=ja>を使うための部品</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>デバイスドライバ</SPAN><SPAN lang=en-US>:NIC</SPAN><SPAN lang=ja>などを</SPAN><SPAN 
+lang=en-US>OS</SPAN><SPAN lang=ja>が利用できるようにするソフトウェア</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD59F(1).tmp" width=518 
+height=283></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.718in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.275in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">HTTP</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:10</P></DIV>
+<DIV 
+style="WIDTH: 6.718in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>インターネットで</SPAN><SPAN lang=en-US>HTML</SPAN><SPAN 
+lang=ja>などのコンテンツの送受信に用いられる通信の約束ごと</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>クライアントが</SPAN><SPAN lang=en-US>HTTP</SPAN><SPAN 
+lang=ja>リクエストを送り、それに対してサーバーが</SPAN><SPAN lang=en-US>HTTP</SPAN><SPAN 
+lang=ja>レスポンスを返す</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US style="FONT-WEIGHT: bold">HTTP</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">リクエスト</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>HTTP</SPAN><SPAN lang=ja>リクエストの中身</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in 0in 0in 0.375in">リクエストライン、ヘッダー、ボディから構成される</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD5B2(1).tmp" width=436 
+height=216></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>GET</SPAN><SPAN lang=ja>　コンテンツを取得（閲覧）</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>POST</SPAN><SPAN lang=ja>　データを送信・作成（投稿・保存）</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>/</SPAN><SPAN lang=ja>　→　</SPAN><SPAN lang=en-US>uri</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>url</SPAN><SPAN lang=ja>からドメインをぬいたパス</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>HTTP/1.1</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>バージョン</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>Host</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>要求したいドメイン名</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>User-Agent</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>クライアントのアプリケーションのタイプ</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>Accept-Encoding</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテンツをどの圧縮アルゴリズムならクライアントが理解できるか</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US style="FONT-WEIGHT: bold">HTTP</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">レスポンス</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD5B5(1).tmp" width=416 
+height=197></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>200</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ステータスコード　結果</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>Date</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>いつコンテンツが生成されたか</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>Content-Type</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>返したボディがどのコンテンツタイプか</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.176in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.813in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">TCP/UDP</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:34</P></DIV>
+<DIV 
+style="WIDTH: 6.176in; MARGIN-TOP: 0.131in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD5C7(1).tmp" width=588 
+height=292></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>TCP</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD5DA(1).tmp" width=586 
+height=274></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD5ED(1).tmp" width=584 
+height=282></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD5F0(1).tmp" width=584 
+height=235></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD602(1).tmp" width=586 
+height=273></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 8.383in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 0.8in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>IP</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:41</P></DIV>
+<DIV 
+style="WIDTH: 8.383in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ヘッダーのフォーマット</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD615(1).tmp" width=800 
+height=262></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD628(1).tmp" width=799 
+height=293></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.779in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.368in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">まとめ</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:47</P></DIV>
+<DIV 
+style="WIDTH: 7.779in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD63A(1).tmp" width=742 
+height=337></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.797in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>8</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:48</P></DIV>
+<DIV 
+style="WIDTH: 5.797in; MARGIN-TOP: 0.225in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD63D(1).tmp" width=552 
+height=388></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD650(1).tmp" width=552 
+height=305></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.648in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 0.863in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">S3</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:49</P></DIV>
+<DIV 
+style="WIDTH: 7.648in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">オンライン上のファイルの保存場所</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD662(1).tmp" width=730 
+height=340></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD675(1).tmp" width=730 
+height=382></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD688(1).tmp" width=729 
+height=383></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>EBS</SPAN><SPAN lang=ja>との違い</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>EBS</SPAN><SPAN lang=ja>→確保した分だけ課金</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>S3</SPAN><SPAN lang=ja>→使用分だけ課金</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ストレージ</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><A 
+href="https://ops.jig-saw.com/tech-cate/aws-storage">https://ops.jig-saw.com/tech-cate/aws-storage</A></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 3.284in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.201in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">バケット作成</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月20日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">18:03</P></DIV>
+<DIV 
+style="WIDTH: 3.284in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">注意点</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">パブリックアクセスは有効にしない</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">名前が世界で一意でないと作成できない</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.386in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.352in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">Offload 
+Media</P></DIV>
+<DIV 
+style="WIDTH: 7.386in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+alt="・Offload Mediaでは「My server is on Amazon Web Services and I'd like to use IAM Roles」を使用&#13;&#10;※EC2にIAMロールを割り当てる必要がある（ロール名：Lab1_WordPressOnEC2）&#13;&#10;・viエディタで良い&#13;&#10;・まだ画像は見れない、後ほどのCloudFrontが必要。理由はブロックパブリックアクセスが有効のため&#13;&#10;�HYPERLINK &quot;https://blog.serverworks.co.jp/Setting-up-an-IAM-role-to-store-images-from-a-WordPress-site-in-an-S3-bucket-using-the-WP-Offload-Media-Lite-plugin&quot;EC2 インスタンスで稼働する WordPress サイトの画像を WP Offload Media Lite プラグインを使って S3 バケットに保存するための IAM ロールの設定 - サーバーワークスエンジニアブログ (serverworks.co.jp)&#13;&#10;2023年7月21日&#13;&#10;10:07&#13;&#10;" 
+src="AWS2.files/mhtD69A(1).tmp" width=1064 height=199></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 10.179in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.959in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.27in">
+<P lang=en-US 
+style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CloudFront</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.27in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:06</P></DIV>
+<TABLE 
+style="BORDER-LEFT-WIDTH: 0pt; BORDER-RIGHT-WIDTH: 0pt; WIDTH: 10.179in; BORDER-BOTTOM-WIDTH: 0pt; MARGIN-TOP: 0.152in; BORDER-COLLAPSE: collapse; DIRECTION: ltr; MARGIN-LEFT: 0in; BORDER-TOP-WIDTH: 0pt" 
+cellSpacing=0 cols=3 cellPadding=0 border=0 valign="top">
+  <TBODY>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 6.471in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 0.548in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 3.159in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.518in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="HEIGHT: 5.893in; WIDTH: 6.471in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top rowSpan=2><IMG 
+      alt="CloudFrontを通してS3にアクセスさせればS3でパブリックアクセス許可しなくてもいい&#13;&#10;&#13;&#10;今回は画像をブラウザに表示させるために「ブラウザ」→「CloudFront」→「S3バケット」&#13;&#10;という順番で画像を取りに行く&#13;&#10;&#13;&#10;CloudFrontのURLは証明書はAWS側が発行してくれる&#13;&#10;&#13;&#10;無題の画像.png 自動生成された代替テキスト: &#10;CloudFrontは、高速にコンテンツを配信するサービス(CDNのサービス)&#10;ノヾー&#10;概要&#10;特徴&#10;・CDN:ContentDeliveryNetwork&#10;・オリジンサーバー(元となる画像を配信するサーバー)上にあるコンテンツを、&#10;世界中100箇所以上にある工ッジロケーションにコピーし、そこから配信を行う&#10;負荷をかけずに配信できる&#10;工ッジサーバでコンテンツのキャッシングを行うので、オリジンサー&#10;・効率的&#10;ユーザから最も近い工ッジサーバにから画像を配信する&#13;&#10;&#13;&#10;無題の画像.png 自動生成された代替テキスト: &#10;作業内容&#10;インター&#10;ネット&#10;VPC&#10;バブリックサブネット&#10;0&#10;0&#10;Web&#10;サーバー&#10;10.O.10.O/24&#10;WordPress&#10;Apache&#10;OS&#10;CloudF「ontから配信する&#10;ディストリビューションの作成,&#10;ドメインを登録する&#10;OffloadMediaで独自&#10;CNAMEレコードを作成する&#10;CloudFrontドメインの&#10;Route53で独自ドメインと&#10;ションに独自ドメインを登録&#10;ClouFrontのディストリビュー&#10;サーバー証明書の発行&#10;CertificateManagerでSSL&#10;独自ドメインから配信する&#13;&#10;" 
+      src="AWS2.files/mhtD69D(1).tmp" width=932 height=849></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 0.518in; WIDTH: 0.548in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="HEIGHT: 0.518in; WIDTH: 3.159in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+      lang=en-US>CDN</SPAN><SPAN lang=ja>ユーザーから近いところから配信</SPAN></P>
+      <P 
+  style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">キャッシュを</P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 5.374in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 5.374in; WIDTH: 0.548in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 5.374in; WIDTH: 3.159in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR></TBODY></TABLE>
+<DIV 
+style="WIDTH: 9.82in; MARGIN-TOP: 0.141in; DIRECTION: ltr; MARGIN-LEFT: 0.27in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>ステップ</SPAN><SPAN lang=en-US>2</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">・まず</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>Offload Media</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>で独自ドメインを登録　→　画像の</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>url</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>が独自ドメイン（独自ドメインが画像の</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>S3</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>の</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>url</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>と紐づいていない）</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>route53 </SPAN><SPAN lang=ja>で</SPAN><SPAN 
+lang=en-US> CNAME</SPAN><SPAN lang=ja>で独自ドメインにアクセス→</SPAN><SPAN 
+lang=en-US>CloudFlront</SPAN><SPAN lang=ja>のドメインにアクセス</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・独自ドメインにアクセスがあったら、</SPAN><SPAN lang=en-US>CLOUDFRONT</SPAN><SPAN 
+lang=ja>のドメイン名にルーティングするように</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・ルーティングされた際に、独自ドメインと</SPAN><SPAN lang=en-US>CLOUDFRONT</SPAN><SPAN 
+lang=ja>のドメイン名の紐付けを</SPAN><SPAN lang=en-US>CLOUDFRONT</SPAN><SPAN 
+lang=ja>が認識できるように</SPAN><SPAN lang=en-US>CLOUDFRONT</SPAN><SPAN 
+lang=ja>　</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>　のディストリビューションでも、独自ドメインを代替ドメインとして登録する。</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・代替ドメインを登録する際に</SPAN><SPAN lang=en-US>SSL</SPAN><SPAN 
+lang=ja>サーバー証明書が必要になってくるので、そちらを</SPAN><SPAN lang=en-US>Certificate</SPAN><SPAN 
+lang=ja>マネージャーから発行する</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.684in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.693in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">手順</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>(</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>証明書など</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>)</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">15:02</P></DIV>
+<DIV 
+style="WIDTH: 5.684in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD6B0(1).tmp" width=487 
+height=287></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ディストリビューション作成</P>
+<P 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: -apple-system; MARGIN: 0in">・ブロックパブリックアクセスが有効な状態では、追加の設定が必要。CloudFrontからS3へのアクセスを許可する設定。</P>
+<P style="MARGIN: 0in"><A 
+href="https://blog.usize-tech.com/practice-wpoffloadmedia-s3/"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: -apple-system">WP Offload 
+MediaプラグインでWordPressサイトをS3バケットにオフロードするベストプラクティス設定 – TechHarmony 
+(usize-tech.com)</SPAN></A></P>
+<P 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: -apple-system; MARGIN: 0in">→「CloudFrontにS3 
+Originを追加(OAC設定)」を参照</P>
+<P 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: -apple-system; MARGIN: 0in">・ビューアプロトコルはHTTPS 
+only</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">コードに認証情報を直に書くのはタブー</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>ACM</SPAN><SPAN lang=ja>証明書</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">・無料</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>ALB</SPAN><SPAN lang=ja>を挟まないと使えない、</SPAN><SPAN 
+lang=en-US>AWS</SPAN><SPAN lang=ja>のサービスにのみ使える</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">証明書発行</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US style="BACKGROUND: yellow; mso-highlight: yellow">443</SPAN><SPAN 
+lang=ja 
+style="BACKGROUND: yellow; mso-highlight: yellow">番を使うために証明書がいる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>CNAME</SPAN><SPAN lang=ja>　</SPAN><SPAN 
+lang=en-US>cloudfront.</SPAN><SPAN 
+lang=ja>lab2.ahaws.toyota-bibliotheca.com</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN 
+style="FONT-FAMILY: 游ゴシック">※</SPAN><SPAN 
+style='FONT-FAMILY: "Yu Gothic"'>名前解決がで</SPAN><SPAN 
+style="FONT-FAMILY: 游ゴシック">きたら</SPAN><SPAN 
+style='FONT-FAMILY: "Yu Gothic"'>発行するので信頼できる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>証明書</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>*.</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">lab2.ahaws.toyota-bibliotheca.com</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">lab2.ahaws.toyota-bibliotheca.com</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>CNAME</SPAN><SPAN lang=ja>レコードを</SPAN><SPAN lang=en-US>Route 
+53</SPAN><SPAN lang=ja>に追加</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>↓検証終了後</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD6C3(1).tmp" width=495 
+height=187></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">ディストリビューションドメイン名を</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>Route53</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>で</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>CNAME</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>で追加</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD6D5(1).tmp" width=415 
+height=162></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>WordPress</SPAN><SPAN lang=ja>の設定</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>「設定」　→　「</SPAN><SPAN lang=en-US>Edit</SPAN><SPAN lang=ja>」から</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD6D8(1).tmp" width=434 
+height=265></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD6EB(1).tmp" width=427 
+height=256></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 1.746in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.368in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">まとめ</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">15:42</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.809in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>9</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">15:47</P></DIV>
+<DIV 
+style="WIDTH: 7.809in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD6FD(1).tmp" width=393 
+height=291></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD710(1).tmp" width=745 
+height=486></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.222in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.368in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>稼働率</P></DIV>
+<DIV 
+style="WIDTH: 6.222in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+alt="無題の画像.png 自動生成された代替テキスト: &#10;要素単体の稼働率を高くする&#10;要素を組み合わせて、全体の稼働率を高くする&#10;負荷を適切なプロビジョニングで回避する&#13;&#10;2023年7月21日&#13;&#10;15:56&#13;&#10;" 
+src="AWS2.files/mhtD713(1).tmp" width=896 height=480></DIV>
+<DIV 
+style="WIDTH: 6.152in; MARGIN-TOP: 0.131in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+src="AWS2.files/mhtD726(1).tmp" width=586 height=239></DIV>
+<DIV 
+style="WIDTH: 6.139in; MARGIN-TOP: 0.212in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+src="AWS2.files/mhtD738(1).tmp" width=585 height=224></DIV>
+<DIV 
+style="WIDTH: 6.145in; MARGIN-TOP: 0.115in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+src="AWS2.files/mhtD73B(1).tmp" width=585 height=164></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.942in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.034in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ベストプラクティス</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:03</P></DIV>
+<DIV 
+style="WIDTH: 6.942in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD74E(1).tmp" width=662 
+height=229></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.883in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.061in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ELB</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:06</P></DIV>
+<DIV 
+style="WIDTH: 6.883in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">Web</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">の場合を</SPAN><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">ALB</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">を使用する</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">存在するだけでお金がかかる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>WAF</SPAN><SPAN lang=ja>でセキュリティ強化</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>ACM</SPAN><SPAN lang=ja>証明書を使用できる</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>EC2</SPAN><SPAN lang=ja>インスタンスにデータを保持する構成では使用できない</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">インターネットから来たものに対してのみ分散する役割がある。</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ターゲットグループに割り当てたものに対して動作する</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">Web</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">アクセスが来た時の動き</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Internet gateway</SPAN><SPAN lang=ja>　→　</SPAN><SPAN 
+lang=en-US>ALB</SPAN><SPAN lang=ja>　→　</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN 
+lang=ja>インスタンス　→　</SPAN><SPAN lang=en-US>ALB</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD761(1).tmp" width=656 
+height=315></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD773(1).tmp" width=656 
+height=301></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.133in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.034in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">インスタンスを作成</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:51</P></DIV>
+<DIV 
+style="WIDTH: 7.133in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>AMI</SPAN><SPAN lang=ja>でセットアップ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>1a</SPAN><SPAN lang=ja>のインスタンスからイメージを作成し、「イメージ」→「</SPAN><SPAN 
+lang=en-US>AMI</SPAN><SPAN lang=ja>」から</SPAN><SPAN lang=en-US>1c</SPAN><SPAN 
+lang=ja>のインスタンスを作成</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>AMI</SPAN><SPAN lang=ja>は</SPAN><SPAN lang=en-US>S3</SPAN><SPAN 
+lang=ja>上に保持されるのでその分の料金がかかる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">メリット）高速</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN lang=ja 
+style="BACKGROUND: yellow; mso-highlight: yellow">デメリット）コストがかかる</SPAN><SPAN 
+lang=en-US style="BACKGROUND: yellow; mso-highlight: yellow">(S3</SPAN><SPAN 
+lang=ja style="BACKGROUND: yellow; mso-highlight: yellow">使用</SPAN><SPAN 
+lang=en-US style="BACKGROUND: yellow; mso-highlight: yellow">)</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ユーザーデータを使用</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD786(1).tmp" width=334 
+height=252></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN lang=ja 
+style="BACKGROUND: yellow; mso-highlight: yellow">メリット</SPAN><SPAN lang=en-US 
+style="BACKGROUND: yellow; mso-highlight: yellow">)</SPAN><SPAN lang=ja 
+style="BACKGROUND: yellow; mso-highlight: yellow">　コストが安い</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">デメリット）サービス提供までの遅延が発生する</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>起動だけ</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>AWS</SPAN><SPAN lang=ja>準備</SPAN><SPAN lang=en-US>AMI</SPAN><SPAN 
+lang=ja>　＞　自作</SPAN><SPAN lang=en-US>AMI</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>・汎用性を持たせるために、初回起動時に処理が走る</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 8.793in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.617in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>ELB</SPAN><SPAN lang=ja>作成</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月21日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:52</P></DIV>
+<DIV 
+style="WIDTH: 8.793in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>「</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN lang=ja>」→「ロードバランサー」</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">クライアント→アプリケーションロードバランサー→</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>web</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>サーバー→アプリケーションロードバランサー→クライアント</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ネットワークロードバランサー（レスポンスの遅延が少ない）</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>クライアント→ネットワークロードバランサー→サーバー→クライアント</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>リバプロまでは</SPAN><SPAN lang=en-US>HTTPS</SPAN><SPAN 
+lang=ja>で問い合わせていて、ブラウザが</SPAN><SPAN lang=en-US>80</SPAN><SPAN 
+lang=ja>に設定してある。</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>WordPress</SPAN><SPAN lang=ja>は</SPAN><SPAN lang=en-US>80</SPAN><SPAN 
+lang=ja>で返そうとするのでエラーが起きてしまう</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>HTTPS</SPAN><SPAN lang=ja>のアクセスなのに</SPAN><SPAN 
+lang=en-US>HTTP</SPAN><SPAN lang=ja>でアクセスされているのでブラウザがはじく</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>インスタンスに</SPAN><SPAN lang=en-US>ELB</SPAN><SPAN 
+lang=ja>に適応している</SPAN><SPAN lang=en-US>HTTPS</SPAN><SPAN 
+lang=ja>のセキュリティグループがソースの</SPAN><SPAN lang=en-US>80</SPAN><SPAN 
+lang=ja>番許可のセキュリティグループを追加</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD798(1).tmp" width=787 
+height=114></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><A 
+href="https://qiita.com/Uryy/items/8cb7ab69b94ebbc5c46c">https://qiita.com/Uryy/items/8cb7ab69b94ebbc5c46c</A></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">インスタンスで</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>HTTPS</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>できたら</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>HTTPS</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>で返すという設定が必要になる</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">wp-config.php</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">if($_SERVER['HTTP_X_FORWARDED_PROTO'] 
+== 'https') {</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>$_SERVER['HTTPS'] = 'on';</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>$_ENV['HTTPS'] = 'on';</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">}</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD79B(1).tmp" width=716 
+height=374></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.222in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.728in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>ELB</SPAN><SPAN lang=ja>作成ポイント</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:25</P></DIV>
+<DIV 
+style="WIDTH: 6.222in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD7AE(1).tmp" width=593 
+height=283></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">①片方が災害などで故障してももう片方が動作する</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">②サーバー</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>A</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>の編集を即座にサーバー</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>B</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>に反映させる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 2.215in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.645in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">負荷対策</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:13</P></DIV>
+<DIV 
+style="WIDTH: 2.215in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">スケールアップ</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">サーバーの性能を上げる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">スケールアウト</SPAN>（推奨）</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">サーバーの数を増やす</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.79in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.232in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>セクション</SPAN><SPAN lang=en-US>10</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:31</P></DIV>
+<DIV 
+style="WIDTH: 6.79in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD7C1(1).tmp" width=647 
+height=192></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD7D3(1).tmp" width=647 
+height=353></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD7E6(1).tmp" width=643 
+height=344></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD7F9(1).tmp" width=640 
+height=324></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.604in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.312in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">マスタースレーブ構成</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:35</P></DIV>
+<DIV 
+style="WIDTH: 7.604in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-WEIGHT: bold">マルチ</SPAN><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">AZ</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>複数のアベイラビリティゾーンにまたがって</SPAN><SPAN lang=en-US>RDS</SPAN><SPAN 
+lang=ja>インスタンスのマスターとスレーブを作成し、マスター故障時はスレーブに</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">マスターからスレーブに対して自動的に同期してくれる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">入れ替わった場合</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>IP</SPAN><SPAN 
+lang=ja>アドレスは変更するがエンドポイントは変わらないので特に設定することはない</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US style="BACKGROUND: yellow; mso-highlight: yellow">RDS</SPAN><SPAN 
+lang=ja style="BACKGROUND: yellow; mso-highlight: yellow">の設定からマルチ</SPAN><SPAN 
+lang=en-US style="BACKGROUND: yellow; mso-highlight: yellow">AZ</SPAN><SPAN 
+lang=ja 
+style="BACKGROUND: yellow; mso-highlight: yellow">をありにするだけ</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.645in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.232in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>11</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:44</P></DIV>
+<DIV 
+style="WIDTH: 7.645in; MARGIN-TOP: 0.225in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+src="AWS2.files/mhtD80B(1).tmp" width=729 height=341></DIV>
+<DIV 
+style="WIDTH: 7.636in; MARGIN-TOP: 0.145in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+src="AWS2.files/mhtD81E(1).tmp" width=729 height=393></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.188in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.201in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">システム監視</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:45</P></DIV>
+<DIV 
+style="WIDTH: 6.188in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD830(1).tmp" width=590 
+height=254></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD843(1).tmp" width=590 
+height=166></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD856(1).tmp" width=589 
+height=200></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.863in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.09in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CloudWatch</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">13:08</P></DIV>
+<DIV 
+style="WIDTH: 7.863in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD868(1).tmp" width=750 
+height=415></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD87B(1).tmp" width=750 
+height=355></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD88E(1).tmp" width=749 
+height=186></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.89in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.09in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">作業</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">13:09</P></DIV>
+<DIV 
+style="WIDTH: 6.89in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">①</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>CloudWatch</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>のアラームを作成</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>「</SPAN><SPAN lang=en-US>CloudWatch</SPAN><SPAN 
+lang=ja>」→「すべてのアラーム」→「アラームの作成」→監視したいものを選択する</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>例）</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>「</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN lang=ja>」→「</SPAN><SPAN 
+lang=en-US>CPUUtilization</SPAN><SPAN lang=ja>」→条件などを設定する</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>確認</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>"yes &gt; /dev/null &amp;"</SPAN><SPAN lang=ja>コマンドを</SPAN><SPAN 
+lang=en-US>EC2</SPAN><SPAN lang=ja>上で実行</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>yes</SPAN><SPAN lang=ja>：ターミナル上で標準出力で永遠にｙという文字を出力する</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>&gt;</SPAN><SPAN lang=ja>：</SPAN><SPAN lang=en-US>yes</SPAN><SPAN 
+lang=ja>コマンドを左に転送</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>/dev/null</SPAN><SPAN lang=ja>：画面に表示されない</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>&amp;</SPAN><SPAN lang=ja>：バックグラウンドで実行する</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>yes</SPAN><SPAN lang=ja>コマンド解除</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>ps aux | grep yes</SPAN><SPAN lang=ja>　→　表示</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>kill -9 </SPAN><SPAN lang=ja>プロセス</SPAN><SPAN 
+lang=en-US>ID</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.674in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.368in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">まとめ</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">13:40</P></DIV>
+<DIV 
+style="WIDTH: 6.674in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD8A0(1).tmp" width=636 
+height=161></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.204in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.232in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>12</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">13:44</P></DIV>
+<DIV 
+style="WIDTH: 5.204in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>権限がないので作成はできない</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD8B3(1).tmp" width=492 
+height=409></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD8B6(1).tmp" width=495 
+height=234></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD8C8(1).tmp" width=493 
+height=252></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.818in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.051in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>IAM</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">13:51</P></DIV>
+<DIV 
+style="WIDTH: 7.818in; MARGIN-TOP: 0.331in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD8DB(1).tmp" width=746 
+height=363></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 12.082in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.09in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.075in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">用語</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.075in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">13:53</P></DIV>
+<TABLE 
+style="BORDER-LEFT-WIDTH: 0pt; BORDER-RIGHT-WIDTH: 0pt; WIDTH: 12.082in; BORDER-BOTTOM-WIDTH: 0pt; MARGIN-TOP: 0.495in; BORDER-COLLAPSE: collapse; DIRECTION: ltr; MARGIN-LEFT: 0in; BORDER-TOP-WIDTH: 0pt" 
+cellSpacing=0 cols=3 cellPadding=0 border=0 valign="top">
+  <TBODY>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 10.045in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 0.028in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1px; WIDTH: 2.007in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1.25in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="HEIGHT: 5.704in; WIDTH: 10.045in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top rowSpan=3><IMG 
+      alt='用語&#13;&#10;意味&#13;&#10;ポリシー&#13;&#10;アクセス許可の定義「どのAWSサービスの」「どのリソースに対して」「どんな操作を」「許可する（許可しない）」を定義&#13;&#10;ユーザー&#13;&#10;個々のアカウントのユーザー&#13;&#10;グループ&#13;&#10;IAMユーザーの集合。複数のユーザーにアクセス許可を付与する作業を簡素化&#13;&#10;ロール&#13;&#10;一時的にアクセスを許可したアカウントを発行できる。EC2LambdaなどのAWSリソースに権限を付与するために使用&#13;&#10;&#13;&#10;無題の画像.png 自動生成された代替テキスト: &#10;Mは、AWSのサービスを利用するユーザー権限を管理するサービス&#10;ポリシーは、アクセス許可の定義&#10;ユーザーは、個々のアカウントのユーザー&#10;グループは、Mユーザーの集合&#10;ロールは、一時的にアクセスを許可したアカウントを発行&#13;&#10;&#13;&#10;�HYPERLINK "https://dev.classmethod.jp/articles/sts-temporality-credential/"STSという一時的なアクセスキーとシークレットアクセスキーを発行してEC2からS3へのアクセスを可能にしている&#13;&#10;IAMユーザー作成時はアクセスキーとシークレットキーを発行してくれる←恒久的に持つ&#13;&#10;インク描画&#13;&#10;インク描画&#13;&#10;' 
+      src="AWS2.files/mhtD8EE(1).tmp" width=1447 height=822></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1.25in; WIDTH: 0.028in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 1.25in; WIDTH: 2.007in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 2.308in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 2.308in; WIDTH: 0.028in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="HEIGHT: 2.308in; WIDTH: 2.007in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><A 
+      href="https://dev.classmethod.jp/articles/sts-temporality-credential/"><SPAN 
+      lang=ja>STS</SPAN></A><SPAN lang=ja 
+      style="FONT-WEIGHT: bold">という一時的なアクセスキーとシークレットアクセスキーを発行して</SPAN><SPAN 
+      lang=en-US style="FONT-WEIGHT: bold">EC2</SPAN><SPAN lang=ja 
+      style="FONT-WEIGHT: bold">から</SPAN><SPAN lang=en-US 
+      style="FONT-WEIGHT: bold">S3</SPAN><SPAN lang=ja 
+      style="FONT-WEIGHT: bold">へのアクセスを可能にしている</SPAN></P>
+      <P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+      lang=en-US style="FONT-WEIGHT: bold">IAM</SPAN><SPAN lang=ja 
+      style="FONT-WEIGHT: bold">ユーザー作成時はアクセスキーとシークレットキーを発行してくれる←恒久的に持つ</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 2.146in; WIDTH: 1px; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt">&nbsp;</P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 2.146in; WIDTH: 0.028in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD>
+    <TD 
+    style="FONT-SIZE: 1pt; HEIGHT: 2.146in; WIDTH: 2.007in; VERTICAL-ALIGN: top; PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0in; PADDING-RIGHT: 0pt" 
+    vAlign=top>
+      <P style="FONT-SIZE: 1pt"></P></TD></TR></TBODY></TABLE></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.509in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.09in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>関係</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">14:15</P></DIV>
+<DIV 
+style="WIDTH: 6.509in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+src="AWS2.files/mhtD900(1).tmp" width=620 height=313></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.672in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.201in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ポリシー作成</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">14:27</P></DIV>
+<DIV 
+style="WIDTH: 5.672in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>「</SPAN><SPAN lang=en-US>IAM</SPAN><SPAN 
+lang=ja>」→「ポリシー」→「作成」</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">開発者用ポリシー</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>(EC2</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>と</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>RDF</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>の全操作ができるポリシー</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>)</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>「アクション」</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN 
+lang=ja>選択後「すべてのアクション」「すべてのリソース」</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>RDS</SPAN><SPAN lang=ja>も同じ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>ディレクターポリシー</SPAN><SPAN lang=en-US>(EC2</SPAN><SPAN 
+lang=ja>の読みとりのみ</SPAN><SPAN lang=en-US>)</SPAN><SPAN 
+lang=ja>　※インスタンス作成できない</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>「アクション」←読み込み　「すべてのリソース」</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.08in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.551in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>IAM</SPAN><SPAN lang=ja>グループ・ユーザー</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">14:32</P></DIV>
+<DIV 
+style="WIDTH: 4.08in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">「</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>IAM</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>」→「グループ」</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・ポリシー選択　→　作成完了</SPAN><SPAN lang=en-US>(</SPAN><SPAN 
+lang=ja>それぞれ作成する</SPAN><SPAN lang=en-US>)</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>「</SPAN><SPAN lang=en-US>IAM</SPAN><SPAN 
+lang=ja>」→　「ユーザー」→「ユーザーを追加」</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・グループに所属させるユーザー選択</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>AWS</SPAN><SPAN 
+lang=ja>マネジメントコンソールへのアクセスを許可</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・パスワード設定</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・グループ選択</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.399in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.44in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>IAM</SPAN><SPAN lang=ja>ロール作成</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">14:45</P></DIV>
+<DIV 
+style="WIDTH: 4.399in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>「</SPAN><SPAN lang=en-US>IAM]</SPAN><SPAN 
+lang=ja>→「ロール」→「ロールを作成」</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>EC2</SPAN><SPAN lang=ja>から</SPAN><SPAN lang=en-US>S3</SPAN><SPAN 
+lang=ja>を操作したいので</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>ロールを使用するサービスで</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN 
+lang=ja>を選択</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>AmazonS3FullAccess</SPAN><SPAN lang=ja>　←</SPAN><SPAN lang=en-US> 
+S3</SPAN><SPAN lang=ja>に対して全ての権限をもつ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>EC2</SPAN><SPAN lang=ja>インスタンスに対してロールをアタッチする</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 8.34in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.829in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>IAM</SPAN><SPAN lang=ja>のベストプラクティス</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">14:58</P></DIV>
+<DIV 
+style="WIDTH: 8.34in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">・個々人に</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>IAM</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>ユーザーを作成する（ルートユーザーだと権限が強すぎる、誰がどのような操作をしたのかが分かる</SPAN><SPAN 
+lang=en-US style='FONT-FAMILY: "Yu Gothic"'>)</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・ユーザーをグループに所属させ、グループに権限を割り当てる（一括でポリシーを操作できる）</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・権限は最小限にする</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN 
+lang=ja>インスタンスから実行することアプリケーションには、ロールを使用する（</SPAN><SPAN 
+lang=en-US>IAM</SPAN><SPAN lang=ja>ユーザーの認証情報は恒久的なので一度キーが流出してしまうと</SPAN><SPAN 
+lang=en-US>OUT</SPAN><SPAN lang=ja>　ロールは一時的なキーを使用するのでよりセキュア）</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・定期的に不要のな認証情報を削除する（使用しなくなったユーザーなどは削除する）</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.714in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.312in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">振り返りと今後の学習</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">15:05</P></DIV>
+<DIV 
+style="WIDTH: 5.714in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">前半（構築編）</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>VPC</SPAN><SPAN lang=ja>設置</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>VPC</SPAN><SPAN lang=ja>内に</SPAN><SPAN 
+lang=en-US>EC2</SPAN><SPAN lang=ja>を設置</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">・</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>Route53</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>でドメインでアクセスできるように</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>RDS</SPAN><SPAN lang=ja>（データベース）設置</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>EC2</SPAN><SPAN lang=ja>内に</SPAN><SPAN 
+lang=en-US>WordPress</SPAN><SPAN lang=ja>をインストールして</SPAN><SPAN 
+lang=en-US>RDS</SPAN><SPAN lang=ja>と接続</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD913(1).tmp" width=543 
+height=268></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>インフラ面（ネットワークの基礎を支える概念）</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>IP</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・ルーティング</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>SSH</SPAN><SPAN lang=ja>公開鍵認証</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・ポート番号</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・ファイアウォール</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・ドメイン</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>DND</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>HTTP</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>TCP/IP</SPAN><SPAN lang=ja>　</SPAN><SPAN 
+lang=en-US>UDP</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>後半（発展編）</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>S3</SPAN><SPAN lang=ja>と</SPAN><SPAN 
+lang=en-US>Cloudfront</SPAN><SPAN lang=ja>で画像配信、キャッシュで高速化</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>ALB</SPAN><SPAN lang=ja>を用いて</SPAN><SPAN 
+lang=en-US>Web</SPAN><SPAN lang=ja>レイヤーを冗長化</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>RDS</SPAN><SPAN lang=ja>、マルチ</SPAN><SPAN 
+lang=en-US>AZ</SPAN><SPAN lang=ja>を用いて</SPAN><SPAN lang=en-US>DB</SPAN><SPAN 
+lang=ja>レイヤーを冗長化</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>CloudWatch</SPAN><SPAN 
+lang=ja>を用いて監視</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>IAM</SPAN><SPAN 
+lang=ja>を用いてユーザーの権限管理</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD926(1).tmp" width=544 
+height=315></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>今後の学習</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>・手を動かして作成する</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・実務、個人プロダクトで</SPAN><SPAN lang=en-US>AWS</SPAN><SPAN 
+lang=ja>を使用する</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>実践で使ってみるのが一番</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>動画で扱っていないサービスも使用</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>AWS</SPAN><SPAN 
+lang=ja>認定ソリューションアーキテクト</SPAN><SPAN lang=en-US>-</SPAN><SPAN 
+lang=ja>アソシエイトの受験もおすすめ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.792in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 0.812in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">図</P></DIV>
+<DIV 
+style="WIDTH: 1.746in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年7月24日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">15:39</P></DIV>
+<DIV 
+style="WIDTH: 7.792in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD710(1).tmp" width=626 
+height=408></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD938(1).tmp" width=632 
+height=406></P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD94B(1).tmp" width=666 
+height=365></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="AWS2.files/mhtD94E(1).tmp" width=743 
+height=404></P></DIV></DIV></DIV>
+<DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 9pt; FONT-FAMILY: Arial; COLOR: #969696; DIRECTION: ltr; TEXT-ALIGN: left; MARGIN: 0in">OneNote 
+で作成されました。</P></DIV></BODY></HTML>

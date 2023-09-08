@@ -1,0 +1,1515 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:dt = 
+"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=ProgId content=OneNote.File>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK id=Main-File 
+rel=Main-File href="Docker.htm"><LINK rel=File-List 
+href="Docker.files/filelist.xml"></HEAD>
+<BODY lang=ja style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック">
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.843in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.51in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>1</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>・</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>2</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:38</P></DIV>
+<DIV 
+style="WIDTH: 6.843in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><A 
+href="https://github.com/uchidayuma/laravel-docker-compose-environment">https://github.com/uchidayuma/laravel-docker-compose-environment</A></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>できるようになること</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US style="FONT-WEIGHT: bold">Docker</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">コンポーズ</SPAN><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">yml</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>.yml</SPAN><SPAN lang=ja>ファイルなどでインフラの設計図を作成できるようになる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>目標</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US style="FONT-WEIGHT: bold">DockerCompose</SPAN><SPAN 
+lang=ja>で複数コンテナ管理と連携させつつこれまでの開発環境を</SPAN><SPAN lang=en-US>Docker</SPAN><SPAN 
+lang=ja>化できる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>↑</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>複数コンテナを管理</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.806in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.111in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>が必要な理由</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:45</P></DIV>
+<DIV 
+style="WIDTH: 6.806in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">環境構築には時間がかかる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>・・・プログラムをひとまとめにしたコンテナを使用する仕組み</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>を使うと？</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>設計図を作っておいて、設計図通りに</SPAN><SPAN lang=en-US>Docker Conpose Up</SPAN><SPAN 
+lang=ja>をすれば構築できる</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">開発環境構築時間の削減</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US style="BACKGROUND: yellow; mso-highlight: yellow">OS</SPAN><SPAN 
+lang=ja 
+style="BACKGROUND: yellow; mso-highlight: yellow">やパソコンのスペックに関係なく構築できる</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=ja>ハードウェアや</SPAN><SPAN lang=en-US>OS</SPAN><SPAN 
+lang=ja>の差異を吸収するのでアプリ環境の実行環境の品質アップ</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht53E0(1).tmp" width=649 
+height=244></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.479in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.645in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">コンテナ</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:52</P></DIV>
+<DIV 
+style="WIDTH: 5.479in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">コンテナ：アプリを隔離されたパッケージ化できる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">パッケージ化されたソフトが並ぶような構造を構築できる</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>によってコンテナを管理できる</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht53F2(1).tmp" width=521 
+height=289></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.57in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.62in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">コンテナと</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>docker</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>の関係</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:56</P></DIV>
+<DIV 
+style="WIDTH: 5.57in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>：コンテナ技術の一つ</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht5405(1).tmp" width=530 
+height=312></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>docker</SPAN><SPAN 
+lang=ja>が一番使われている（ユーザーに優しい）</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.702in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.666in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">仮想環境と</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>Docker</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>の違い</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:59</P></DIV>
+<DIV 
+style="WIDTH: 6.702in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">仮想環境：パソコンの中にパソコンを作る技術</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">例）</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>WindowsPC</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>の中に</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>Linux</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>サーバーを立てる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・２つの</SPAN><SPAN lang=en-US>OS</SPAN><SPAN lang=ja>を立ち上げるため重い</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・ゲスト</SPAN><SPAN lang=en-US>OS</SPAN><SPAN lang=ja>は</SPAN><SPAN 
+lang=en-US>HDD</SPAN><SPAN lang=ja>に保存</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>VirtualBox</SPAN><SPAN lang=ja>が有名</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ディスク上に存在</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテナ</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Linux</SPAN><SPAN lang=ja>サーバー上に直接ソフトウェアが立ち上がるイメージ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>ホスト</SPAN><SPAN lang=en-US>OS</SPAN><SPAN lang=ja>・ゲスト</SPAN><SPAN 
+lang=en-US>OS</SPAN><SPAN lang=ja>の区切りがない</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>メモリ上にアプリが存在する</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht5418(1).tmp" width=639 
+height=293></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.662in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.034in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">インフラのコード化</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:05</P></DIV>
+<DIV 
+style="WIDTH: 4.662in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">コード化</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">→ファイルを読むと構成がわかる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">→誰でも同じコンテナになる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">→受け渡しが簡単</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">サーバーで実行するコードを定義</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>(Infrastracture As a Code)</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">→設定などを自動で行う</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.827in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.028in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Dockerfile</SPAN><SPAN lang=ja>と</SPAN><SPAN 
+lang=en-US>Docker</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:14</P></DIV>
+<DIV 
+style="WIDTH: 6.827in; MARGIN-TOP: 0.225in; DIRECTION: ltr; MARGIN-LEFT: 0in"><IMG 
+alt="無題の画像.png 自動生成された代替テキスト: &#10;build&#13;&#10;無題の画像.png 自動生成された代替テキスト: &#10;run&#13;&#10;無題の画像.png 自動生成された代替テキスト: &#10;00(kerfⅱe&#10;00(kerイメージ&#10;00(kerコンテナ&#13;&#10;" 
+src="Docker.files/mht542A(1).tmp" width=983 height=360></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.042in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.555in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>イメージ</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:19</P></DIV>
+<DIV 
+style="WIDTH: 5.042in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht543D(1).tmp" width=414 
+height=267></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht544F(1).tmp" width=480 
+height=231></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 3.917in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>タグ</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:38</P></DIV>
+<DIV 
+style="WIDTH: 3.917in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht5462(1).tmp" width=341 
+height=167></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">タグを指定しないと最新バージョンが設定される</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><A 
+href="https://hub.docker.com/_/ubuntu">https://hub.docker.com/_/ubuntu</A></P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht5475(1).tmp" width=122 
+height=19></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.834in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.59in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>複数コンテナ管理と連携</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:50</P></DIV>
+<DIV 
+style="WIDTH: 5.834in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht5478(1).tmp" width=555 
+height=196></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.296in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.312in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コマンドインストール</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:59</P></DIV>
+<DIV 
+style="WIDTH: 4.296in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>sudo su - 
+ec2-user</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>sudo yum install docker</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>sudo ss -antp</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>sudo ss -antpu<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN lang=ja>sudo systemctl restart docker.service</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>sudo systemctl status 
+docker</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=ja><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN lang=en-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN></SPAN><SPAN lang=ja>sudo systemctl 
+start docker</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>sudo systemctl enable 
+docker</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=ja><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN lang=en-US><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN></SPAN><SPAN lang=ja>docker ps</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=ja><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN lang=en-US><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN></SPAN><SPAN lang=ja>sudo usermod 
+ec2-user -G systemd-journal,docker</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=ja><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN lang=en-US><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN></SPAN><SPAN lang=ja>docker ps</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>4</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">18:07</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 10.09in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.538in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>run</SPAN><SPAN lang=ja>・</SPAN><SPAN lang=en-US>ps</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:05</P></DIV>
+<DIV 
+style="WIDTH: 10.09in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>run</SPAN><SPAN lang=ja>：</SPAN><SPAN lang=en-US>docker</SPAN><SPAN 
+lang=ja>コンテナを１つ起動するコマンド</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>docker image</SPAN><SPAN 
+lang=ja>がない場合は、</SPAN><SPAN lang=en-US>docker hub</SPAN><SPAN 
+lang=ja>から自動で取得</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>ps</SPAN><SPAN lang=ja>：起動中のコンテナを表示するコマンド</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>停止中のコンテナは表示されない</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→停止中のコンテナも見たい場合は</SPAN><SPAN lang=en-US>-a</SPAN><SPAN 
+lang=ja>オプションをつける</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ docker run &lt;</SPAN><SPAN lang=ja>起動したいイメージ名</SPAN><SPAN 
+lang=en-US>&gt;</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ dpcker ps </SPAN><SPAN lang=ja>→</SPAN><SPAN lang=en-US> 
+hello-world</SPAN><SPAN lang=ja>でない</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ docker ps -a</SPAN><SPAN lang=ja>　→表示される</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>フォアグラウンドで動いているプロセスがない場合、コンテナが停止してしまう</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>helloworld</SPAN><SPAN lang=ja>コンテナの中身：ターミナルに</SPAN><SPAN 
+lang=en-US>"Hello from Docker!"</SPAN><SPAN lang=ja>を表示する　</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.75in'>※表示後は停止する</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+docker run <SPAN style="FONT-WEIGHT: bold">--name</SPAN> oyaizu-udemy 
+hello-world</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+docker ps -a</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht548A(1).tmp" width=964 
+height=54></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">docker run --name rmtest --rm hello-world</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>--rm</SPAN><SPAN lang=ja>：実行後に停止したコンテナを自動で削除してくれる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>bash</SPAN><SPAN lang=ja>を使って</SPAN><SPAN lang=en-US>-it</SPAN><SPAN 
+lang=ja>オプションで</SPAN><SPAN lang=en-US>centos</SPAN><SPAN 
+lang=ja>を操作する</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker run -it 
+--name mycentos centos:8 /bin/bash</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>-it</SPAN><SPAN lang=ja>：</SPAN><SPAN lang=en-US>shell</SPAN><SPAN 
+lang=ja>を使用する</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>centos:8</SPAN><SPAN lang=ja>：</SPAN><SPAN 
+lang=en-US>centos</SPAN><SPAN lang=ja>のバージョン</SPAN><SPAN lang=en-US>8</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>→　[root@95500d782260 /]# exit</SPAN><SPAN lang=en-US> </SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$docker ps -a 
+</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht549D(1).tmp" width=932 
+height=40></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.088in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.961in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>start</SPAN><SPAN lang=ja>・</SPAN><SPAN 
+lang=en-US>stop</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">18:07</P></DIV>
+<DIV 
+style="WIDTH: 5.088in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテナ１つを操作</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>いずれも削除はしないので、残る</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">docker start mycentos</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>docker ps -a </SPAN><SPAN 
+lang=ja>で確認すると</SPAN><SPAN lang=en-US>STATUS</SPAN><SPAN 
+lang=ja>の部分が</SPAN><SPAN lang=en-US>UP</SPAN><SPAN lang=ja>になっている</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ docker stop &lt;CONTAINER ID&gt;</SPAN><SPAN lang=ja>　</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>docker ps -a </SPAN><SPAN 
+lang=ja>で確認すると</SPAN><SPAN lang=en-US>STATUS</SPAN><SPAN 
+lang=ja>の部分が</SPAN><SPAN lang=en-US>Exited</SPAN><SPAN lang=ja>になっている</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ docker restart &lt;CONTAINER ID</SPAN><SPAN lang=ja>　</SPAN><SPAN 
+lang=en-US>or</SPAN><SPAN lang=ja>　</SPAN><SPAN lang=en-US>NAMES&gt;</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→起動される</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.754in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.124in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>exec</P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:06</P></DIV>
+<DIV 
+style="WIDTH: 4.754in; MARGIN-TOP: 0.352in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">コンテナに入るとは？</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">コンテナ内のコマンドライン</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>(bash</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>や</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>zdh)</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>にアクセスすること</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→コマンドライン経由でコンテナを操作できる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">起動中のコンテナ内でコマンドを実行する</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in 0in 0in 0.375in">・起動中のコンテナに入らずコマンドを実行</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in 0in 0in 0.375in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">・</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>-it</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>オプションを使うとコンテナに入ることができる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN 
+style='FONT-FAMILY: "Yu Gothic"'>＄</SPAN><SPAN style="FONT-FAMILY: 游ゴシック">docker 
+exec -it mycentos /bin/bash</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'># </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">cat /etc/redhat-release</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">バージョンが返ってくる</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">docker exec mycentos cat 
+/etc/redhat-release</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">同じ結果</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 3.556in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 0.998in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>rm 
+</P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:16</P></DIV>
+<DIV 
+style="WIDTH: 3.556in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">停止中のコンテナを削除する</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>-f</SPAN><SPAN lang=ja>オプションで起動中のコンテナも強制削除</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→コンテナのデータも消えるので注意</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">docker rm -f</SPAN><SPAN lang=en-US 
+style="FONT-FAMILY: 游ゴシック"> &lt;ID</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">　</SPAN><SPAN lang=en-US 
+style="FONT-FAMILY: 游ゴシック">or</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">　</SPAN><SPAN lang=en-US 
+style="FONT-FAMILY: 游ゴシック">NAMES&gt;</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">起動中のコンテナも削除</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.618in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.141in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>images</SPAN><SPAN lang=ja>・</SPAN><SPAN 
+lang=en-US>rmi</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:19</P></DIV>
+<DIV 
+style="WIDTH: 5.618in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>image</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>：</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">ローカルにある</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>image</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>を全て表示</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>意外と</SPAN><SPAN lang=en-US>Docker</SPAN><SPAN 
+lang=ja>イメージは容量が大きい！</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→定期的に確認がおすすめ！</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=ja>$ 
+docker images</SPAN><SPAN lang=en-US> </SPAN></P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>rmi</SPAN><SPAN lang=ja>：</SPAN><SPAN lang=en-US>Docker</SPAN><SPAN 
+lang=ja>イメージを削除</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>起動中のコンテナのイメージは削除できない</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>Docker</SPAN><SPAN 
+lang=ja>イメージは依存関係があるので、ベースイメージは削除できない</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+docker stop &lt;ID&gt;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ docker rmi &lt;ID&gt;</SPAN><SPAN lang=ja>　→　イメージ削除できる</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 2.628in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.163in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>build</P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:27</P></DIV>
+<DIV 
+style="WIDTH: 2.628in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Dockerfile</SPAN><SPAN lang=ja>からイメージを生成</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>例）</SPAN><SPAN lang=en-US>sudo vi test/Dockerfile</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>FROM centos:7</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>RUN 
+yum update -y</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+docker build test/</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→実行される</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.423in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.905in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>docker cp 
+</P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:34</P></DIV>
+<DIV 
+style="WIDTH: 5.423in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">コンテナのとホストマシンでファイルのやり取りを行うコピーコマンド</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>ログファイルや設定ファイルの取り出し</SPAN><SPAN lang=en-US> or </SPAN><SPAN 
+lang=ja>入力で使う</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">例</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>)</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">sudo vi command/sample.txt</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">ホストからコンテナにコピー</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ d</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">ocker run -it --name mycentos centos:8 
+/bin/bash</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker start 
+mycentos</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker cp 
+command/sample.txt mycentos:/opt</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker exec -it 
+mycentos /bin/bash</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"># cat 
+/opt/sample.txt　→　同じ内容</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">コンテナからホストにコピー　※ホストからコマンドを入力する</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">docker cp mycentos:/opt/container.txt 
+/home/ec2-user/test/cp/</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 2.945in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.056in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>logs</P></DIV>
+<DIV 
+style="WIDTH: 1.591in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">9:47</P></DIV>
+<DIV 
+style="WIDTH: 2.945in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>コンテナのログ出力</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>-f</SPAN><SPAN 
+lang=ja>オプションでリアルタイムログ</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>・原因不明のコンテナ停止</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>・アクセスログなどなど</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>リアルタイムログ</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker logs 
+-f<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>mycentos</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.519in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.201in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">必須ではない</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:01</P></DIV>
+<DIV 
+style="WIDTH: 5.519in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">docker inspect &lt;NAMES&gt;</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>の詳細情報出力</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>普段は見ない詳細情報をみれる</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→トラブル時などに使うことがある</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">docker pull</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>イメージをダウンロード</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>pull</SPAN><SPAN lang=ja>の後ろに</SPAN><SPAN lang=en-US>*</SPAN><SPAN 
+lang=ja>プライベートイメージ</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>レジストリ付けると、</SPAN><SPAN lang=en-US>DockerHub</SPAN><SPAN 
+lang=ja>以外からダウンロードできる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">docker commit</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテナをイメージ化</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>attach</SPAN><SPAN lang=ja>などで追加操作</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→追加操作を新しいレイヤーにする</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→オリジナルイメージ作成</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>*</SPAN><SPAN lang=ja>注意点：必ずアカウント</SPAN><SPAN 
+lang=en-US>ID</SPAN><SPAN lang=ja>を入れる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>例）</SPAN><SPAN lang=en-US>docker commit mycentos &lt;docker hub 
+ID&gt;/oyaizu-centos:&lt;</SPAN><SPAN lang=ja>タグ＞</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>docker image</SPAN><SPAN lang=ja>で確認できる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">docker push</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>イメージを</SPAN><SPAN lang=en-US>DockerHub</SPAN><SPAN 
+lang=ja>にアップ</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>オリジナルイメージを自分のアカウントにアップ</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>＊要ログイン</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">docker history</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>イメージの履歴を確認</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>他人が作ったイメージの中身を知りたいときに使う</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Dockerfile</SPAN><SPAN 
+lang=ja>がない時に使うコマンド</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 2.1in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>セクション</SPAN><SPAN lang=en-US>5</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:11</P></DIV>
+<DIV 
+style="WIDTH: 0.792in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in">&lt;&lt;README.md&gt;&gt;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 3.832in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.034in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテナボリューム</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:15</P></DIV>
+<DIV 
+style="WIDTH: 3.832in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht54A0(1).tmp" width=363 
+height=249></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht54B3(1).tmp" width=360 
+height=255></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.16in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.486in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>永続</SPAN><SPAN lang=en-US>DB</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:16</P></DIV>
+<DIV 
+style="WIDTH: 4.16in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ホストマシンのディスクに書き込み</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in 0in 0in 0.375in"><SPAN 
+lang=ja>ホスト：（</SPAN><SPAN lang=en-US>Docker</SPAN><SPAN 
+lang=ja>をインストールしたマシン）</SPAN></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.188in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 3.034in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ボリュームマウント</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:18</P></DIV>
+<DIV 
+style="WIDTH: 6.188in; MARGIN-TOP: 0.475in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht54C5(1).tmp" width=590 
+height=203></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.706in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.727in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>オリジナル</SPAN><SPAN lang=en-US>HTML</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:19</P></DIV>
+<DIV 
+style="WIDTH: 7.706in; MARGIN-TOP: 0.245in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker run --name 
+mynginx -p 8080:80 nginx:1.16</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>8080:80</SPAN><SPAN 
+lang=ja>　←外側からアクセスするポート：コンテナ内からアクセスするポート</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>/home/ec2-user/test/index.html</SPAN><SPAN 
+lang=ja>　→　表示内容をかく</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker run -v<SPAN 
+style="mso-spacerun: yes">&nbsp; 
+</SPAN>/home/ec2-user/test:/usr/share/nginx/html<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>--name mynginx -p 8080:80 nginx:1.16</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in 0in 0in 0.375in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">※/home/ec2-user/test:/usr/share/nginx/html　←　</SPAN><SPAN 
+lang=en-US style='FONT-FAMILY: "Yu Gothic"'>nginx</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>のドキュメントルートにファイルを共有する</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ d</SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">ocker exec -it mynginx /bin/bash</SPAN></P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'># 
+cd /usr/share/nginx/html</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'># 
+cat index.html</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→内容がみれる</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.247in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 1.645in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">本番環境</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:40</P></DIV>
+<DIV 
+style="WIDTH: 7.247in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">問題点</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">・サーバーのストレージと共通する←サーバー１つ１つと共通するとサーバーによってデータが違う</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">解決方法：</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>Amazon aurora</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>　←高速</SPAN></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.078in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">セクション</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>6</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:44</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.725in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.84in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>Dockerfile</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:42</P></DIV>
+<DIV 
+style="WIDTH: 4.725in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>イメージをコード化したもの</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Dockerfile</SPAN><SPAN lang=ja>を使うと・・・</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>・ファイルを読むと構成がわかる</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>・オリジナルイメージを作成できる</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>・設定ファイルなども変更できる</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>例）</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht54D8(1).tmp" width=449 
+height=156></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.796in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.034in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ベストプラクティス</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:44</P></DIV>
+<DIV 
+style="WIDTH: 6.796in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><A 
+href="https://docs.docker.jp/engine/articles/dockerfile_best-practice.html">https://docs.docker.jp/engine/articles/dockerfile_best-practice.html</A></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテナはエフェメラルである（コンテナに常態を持たない）</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>エフェメラル・・・停止・破棄可能であり、明らかに最小のセットアップで構築して使える</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>余計なファイルを置かない</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>不要なパッケージのインストールを避ける</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>コンテナ毎に一つのプロセスだけ実行（連携させて使用する）</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>レイヤの数を最小に</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>複数行の引数（読みやすい工夫）</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.88in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.063in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>RUN</SPAN><SPAN lang=ja>と</SPAN><SPAN lang=en-US>CMD</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">10:51</P></DIV>
+<DIV 
+style="WIDTH: 7.88in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">RUN</SPAN><SPAN lang=ja 
+style="FONT-WEIGHT: bold">と</SPAN><SPAN lang=en-US 
+style="FONT-WEIGHT: bold">CMD</SPAN><SPAN lang=en-US><BR></SPAN><SPAN 
+lang=ja>どちらもコマンドを実行</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">→しかし、実行タイミングが異なる</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>RUN</SPAN><SPAN lang=ja>：</SPAN><SPAN 
+lang=en-US>Dockerfile</SPAN><SPAN lang=ja>から</SPAN><SPAN 
+lang=en-US>Dockerimage</SPAN><SPAN lang=ja>にビルドする時に一回だけ実行するコマンド</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>CMD</SPAN><SPAN lang=ja>：</SPAN><SPAN 
+lang=en-US>Dckerfile</SPAN><SPAN lang=ja>からできたイメージをコンテナ化するときに実行するコマンド</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>例）</SPAN><SPAN lang=en-US>RUN apt-get install -y nginx 
+(Dockerfile</SPAN><SPAN lang=ja>→イメージ　の際にあらかじめインストールしておきたい</SPAN><SPAN 
+lang=en-US>)</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CMD ["nginx","-g","daemon off;"] (-g</SPAN><SPAN lang=ja>：</SPAN><SPAN 
+lang=en-US>nginx</SPAN><SPAN lang=ja>を起動する</SPAN><SPAN lang=en-US> daemon 
+off</SPAN><SPAN lang=ja>：フォアグラウンドで稼働</SPAN><SPAN lang=en-US>)</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>CMD</SPAN><SPAN lang=ja>の</SPAN><SPAN lang=en-US>exec</SPAN><SPAN 
+lang=ja>形式</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'><SPAN 
+lang=en-US>Json</SPAN><SPAN lang=ja>配列方式なのでコマンドを</SPAN><SPAN 
+lang=en-US>""</SPAN><SPAN lang=ja>で囲う必要がある</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>vi 
+/<SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">run</SPAN>/Dockerfile</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">FROM 
+ubuntu:20.04</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">RUN apt-get update 
+-y &amp;&amp; \</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>apt-get install -y nginx</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CMD ["nginx", "-g", 
+"daemon off;"]</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">$ docker build -t dockerfile-run-nginx </SPAN><SPAN 
+lang=ja 
+style="FONT-FAMILY: 游ゴシック; BACKGROUND: yellow; mso-highlight: yellow">run</SPAN><SPAN 
+lang=ja style="FONT-FAMILY: 游ゴシック">　</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>※</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>-t</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>：名前をつける</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>run</SPAN><SPAN lang=ja>の中にある</SPAN><SPAN 
+lang=en-US>Dockerfile</SPAN><SPAN lang=ja>のビルドが始まる</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+docker run -d -p 8081:80 --name dockerfile-run-nginx dockerfile-run-nginx</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+docker ps</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>8081</SPAN><SPAN lang=ja>番で</SPAN><SPAN 
+lang=en-US>nginx</SPAN><SPAN lang=ja>が起動していることを確認する</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">curl </SPAN><A href="http://localhost:8081/"><SPAN 
+lang=ja 
+style="FONT-FAMILY: 游ゴシック">http://localhost:8081</SPAN></A></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.125in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 2.163in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>COPY</SPAN><SPAN lang=ja>と</SPAN><SPAN 
+lang=en-US>ADD</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:11</P></DIV>
+<DIV 
+style="WIDTH: 6.125in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">どちらもファイルをイメージに追加するコマンド</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>→</SPAN><SPAN lang=en-US>ADD</SPAN><SPAN 
+lang=ja>はネット経由でも追加できる</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>基本はローカルからの追加なので、</SPAN><SPAN lang=en-US>COPY</SPAN><SPAN 
+lang=ja>を推奨</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>$ 
+vi /copy/Dockerfile</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">FROM 
+ubuntu:20.04</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">RUN apt-get update 
+-y &amp;&amp; \</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>apt-get install -y nginx</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">COPY index.html 
+/var/www/html</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CMD ["nginx", "-g", 
+"daemon off;"]</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">$ docker </SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>run </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">-d -p 8082:80 --name dockerfile-copy-nginx 
+dockerfile-copy-nginx</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 5.987in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 1.095in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P lang=en-US 
+style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ENV</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">16:47</P></DIV>
+<DIV 
+style="WIDTH: 5.987in; MARGIN-TOP: 0.602in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">環境変数を設定</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>・</SPAN><SPAN lang=en-US>DB</SPAN><SPAN lang=ja>のユーザー名など</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">・動作環境（</SPAN><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>local</SPAN><SPAN lang=ja 
+style='FONT-FAMILY: "Yu Gothic"'>など）</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>ただし、直接書き込みのみで固定値になってしまう。</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>（ユーザーによって変えられない）</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN lang=en-US 
+style='FONT-FAMILY: "Yu Gothic"'>$ </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック">sudo vi </SPAN><SPAN lang=ja 
+style="FONT-FAMILY: 游ゴシック; BACKGROUND: yellow; mso-highlight: yellow">env</SPAN><SPAN 
+lang=ja style="FONT-FAMILY: 游ゴシック">/Dockerfile</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">FROM 
+ubuntu:20.04</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">RUN apt-get update 
+-y &amp;&amp; \</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>apt-get install -y nginx</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ENV 
+TESTENV="Uchida"</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ENV 
+APP_ENV="production"</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">#よく使うのが、locat,production</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CMD ["nginx", "-g", 
+"daemon off;"]</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">docker build -t 
+dockerfile-env-nginx <SPAN 
+style="BACKGROUND: yellow; mso-highlight: yellow">env</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker run -d -p 
+8083:80 --name dockerfile-env-nginx dockerfile-env-nginx</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>$ docker inspect</SPAN><SPAN lang=ja>　→　確認できる</SPAN></P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht54DB(1).tmp" width=523 
+height=248></P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 7.238in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.555in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.35in">
+<P style='FONT-SIZE: 20pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>Docker</SPAN><SPAN lang=ja>メリット</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.35in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:50</P></DIV>
+<DIV 
+style="WIDTH: 7.238in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<UL 
+style="MARGIN-BOTTOM: 0in; unicode-bidi: embed; MARGIN-TOP: 0in; DIRECTION: ltr">
+  <OL 
+  style="FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 0in; FONT-FAMILY: 游ゴシック; unicode-bidi: embed; MARGIN-TOP: 0in; FONT-WEIGHT: normal; DIRECTION: ltr; FONT-STYLE: normal" 
+  type=1>
+    <LI 
+    style="MARGIN-BOTTOM: 6pt; VERTICAL-ALIGN: middle; MARGIN-TOP: 0pt; COLOR: #202022" 
+    value=1><SPAN 
+    style="FONT-SIZE: 13.5pt; FONT-FAMILY: 游ゴシック; BACKGROUND: white; FONT-WEIGHT: normal; FONT-STYLE: normal">コード化されたファイルを共有することで、どこでも誰でも同じ環境が作れる。</SPAN> 
+
+    <LI 
+    style="MARGIN-BOTTOM: 6pt; VERTICAL-ALIGN: middle; MARGIN-TOP: 0pt; COLOR: #202022"><SPAN 
+    style="FONT-SIZE: 13.5pt; FONT-FAMILY: 游ゴシック; BACKGROUND: white">作成した環境を配布しやすい。</SPAN> 
+
+    <LI 
+    style="MARGIN-BOTTOM: 6pt; VERTICAL-ALIGN: middle; MARGIN-TOP: 0pt; COLOR: #202022"><SPAN 
+    style="FONT-SIZE: 13.5pt; FONT-FAMILY: 游ゴシック; BACKGROUND: white">スクラップ＆ビルドが容易にできる。</SPAN> 
+    </LI></OL>
+  <P 
+  style="FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: 游ゴシック; MARGIN-TOP: 0pt; COLOR: #202022">&nbsp;</P>
+  <P lang=en-US 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'>&nbsp;</P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  style="BACKGROUND: white">アプリケーションが動く状態にしたものをひとまとめにしたもの</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  lang=en-US style="BACKGROUND: white">Docker</SPAN><SPAN lang=ja 
+  style="BACKGROUND: white">さえ入っていればコンテナ</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  style="BACKGROUND: white">コンテナで完結しているので依存するパッケージのバージョンに左右されない</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  style="BACKGROUND: white">故障してもコンテナを入れなおせば動くようになる</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  lang=en-US style="BACKGROUND: white">OS</SPAN><SPAN lang=ja 
+  style="BACKGROUND: white">のバージョンが違っても</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  lang=en-US style="BACKGROUND: white">pull</SPAN><SPAN lang=ja 
+  style="BACKGROUND: white">してそのまま使える</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'>&nbsp;</P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'>&nbsp;</P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  style="BACKGROUND: white">コンテナ１からコンテナ２のデータを取りにいくことはできない　それぞれ分離</SPAN></P>
+  <P 
+  style='FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; FONT-FAMILY: "Yu Gothic"; MARGIN-TOP: 0pt; COLOR: #202022'><SPAN 
+  lang=ja style="BACKGROUND: white">データを残さない　→　</SPAN><SPAN lang=en-US 
+  style="BACKGROUND: white">DB</SPAN><SPAN lang=ja 
+  style="BACKGROUND: white">などで困る　共有してデータをはき出しておく</SPAN></P></UL></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.55in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.892in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>カスタム</SPAN><SPAN lang=en-US>MariaDB</SPAN><SPAN 
+lang=ja>イメージ</SPAN></P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:06</P></DIV>
+<DIV 
+style="WIDTH: 6.55in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">mariadb/Dockerfile</SPAN></P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">FROM 
+mariadb:10.4</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">RUN apt-get update 
+-y</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">COPY my.conf 
+/etc/mysql/conf.d</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">COPY 
+create-table.sql /docker-entrypoint-initdb.d</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ENV 
+MYSQL_USER=root</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ENV 
+MYSQL_DATABASE=docker</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">ENV 
+MYSQL_ROOT_PASSWORD=root</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+style="FONT-WEIGHT: bold">create-tables.sql</SPAN></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">CREATE TABLE persons 
+(</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>id int,</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>lastname varchar(255),</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>firstname varchar(255),</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>address varchar(255),</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>city varchar(255)</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">);</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 12pt; FONT-FAMILY: -apple-system; COLOR: #1f2328; MARGIN: 0in"><SPAN 
+style="FONT-WEIGHT: bold">my.conf</SPAN></P>
+<P 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 游ゴシック; COLOR: #1f2328; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">[client]<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN># clientセクション: mysqlクライアントツールへの設定</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">port=3306</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">socket=/tmp/mysql.sock</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">[mysqld]<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN># mysqldセクション: mysqlサーバーへの設定</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">port=3306</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">socket=/tmp/mysql.sock</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">key_buffer_size=16M</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">max_allowed_packet=8M</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">[mysqldump]<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN># mysqldumpセクション:　バックアップコマンドへの設定</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">quick</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">[mysqld_safe]<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN># mysqld_safeセクション: 起動ファイル設定</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">log-error=/var/log/mysqld.log</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">pid-file=/var/run/mysqld/mysqld.pid</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">$ docker run -d 
+--name mymariadb mymariadb</P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN style="FONT-FAMILY: 游ゴシック">$ 
+docker images　</SPAN><SPAN style='FONT-FAMILY: "Yu Gothic"'>←　確認</SPAN></P>
+<P style="FONT-SIZE: 11pt; MARGIN: 0in"><SPAN style="FONT-FAMILY: 游ゴシック">$ 
+docker exec -it mymariadb /bin/bash　</SPAN><SPAN 
+style='FONT-FAMILY: "Yu Gothic"'>←　コンテナに入る</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>#mysql -u root -p</SPAN><SPAN lang=ja>　　　※パスワードは環境変数で</SPAN><SPAN 
+lang=en-US>root</SPAN><SPAN lang=ja>になるようにかかれている</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>[(none)] show databases;</SPAN><SPAN lang=ja>　→　</SPAN><SPAN 
+lang=en-US>docker</SPAN><SPAN lang=ja>が作られている</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>[(none)] user docker;</SPAN><SPAN lang=ja>　</SPAN></P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'><SPAN 
+lang=en-US>[(none)] show tables;</SPAN><SPAN lang=ja>　→　</SPAN><SPAN 
+lang=en-US>persons</SPAN><SPAN lang=ja>が作られている</SPAN></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 6.604in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV style="WIDTH: 3.868in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">コンテナとイメージの違い</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月3日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:55</P></DIV>
+<DIV 
+style="WIDTH: 6.604in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><A 
+href="https://www.kagoya.jp/howto/cloud/container/dockerimage/#:~:text=Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%EF%BC%88images%EF%BC%89%E3%81%A8%E3%81%AF%E3%80%81Docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%8B%95%E4%BD%9C,Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82">https://www.kagoya.jp/howto/cloud/container/dockerimage/#:~:text=Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%EF%BC%88images%EF%BC%89%E3%81%A8%E3%81%AF%E3%80%81Docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%8B%95%E4%BD%9C,Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82</A></P></DIV></DIV></DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P style="MARGIN: 0in">&nbsp;</P>
+<DIV style="DIRECTION: ltr">
+<DIV style="WIDTH: 4.715in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<DIV 
+style="WIDTH: 2.756in; MARGIN-TOP: 0in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P style="FONT-SIZE: 20pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">インスタンス作成</P></DIV>
+<DIV 
+style="WIDTH: 1.668in; MARGIN-TOP: 0.042in; DIRECTION: ltr; MARGIN-LEFT: 0.021in">
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">2023年8月2日</P>
+<P 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 游ゴシック; COLOR: #767676; MARGIN: 0in">17:21</P></DIV>
+<DIV 
+style="WIDTH: 4.715in; MARGIN-TOP: 0.495in; DIRECTION: ltr; MARGIN-LEFT: 0in">
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=ja>ロールの切り替え→</SPAN><SPAN lang=en-US>LabUserRole</SPAN></P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in">&nbsp;</P>
+<P style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in"><SPAN 
+lang=en-US>SandBox</SPAN><SPAN lang=ja>・・・</SPAN></P>
+<P lang=en-US 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in 0in 0in 0.375in">DeveloperAccessExt</P>
+<P 
+style="FONT-SIZE: 11pt; FONT-FAMILY: 游ゴシック; MARGIN: 0in 0in 0in 0.375in">&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>t3.small</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>ws-keypair</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in 0in 0in 0.375in'>&nbsp;</P>
+<P style="MARGIN: 0in 0in 0in 0.375in"><IMG src="Docker.files/mht54ED(1).tmp" 
+width=332 height=118></P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P style="MARGIN: 0in"><IMG src="Docker.files/mht5500(1).tmp" width=448 
+height=144></P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>システムズマネージャーへの権限を許可　</P>
+<P 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>→セッションマネージャーから接続できる</P>
+<P style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>&nbsp;</P>
+<P lang=en-US 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Yu Gothic"; MARGIN: 0in'>sudo su - 
+ec2-user</P></DIV></DIV></DIV>
+<DIV>
+<P style="MARGIN: 0in">&nbsp;</P>
+<P 
+style="FONT-SIZE: 9pt; FONT-FAMILY: Arial; COLOR: #969696; DIRECTION: ltr; TEXT-ALIGN: left; MARGIN: 0in">OneNote 
+で作成されました。</P></DIV></BODY></HTML>
