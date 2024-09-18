@@ -1,0 +1,7 @@
+The demo web app is a binary file that con be executed using Python. You can run the binary file by using the p command. Pl ise note that you may need to i
+Python dependencies mannally.
+You can download the binary from following S3 bucket
+• Package:
+The bin file can be executed on Amazon Linux 2023.
+Ensure that these packages are correctly configured and integrated within the EC2 cavironment to chable the smooth and efficient operation of the web service.
+The tank verification is performed at fixed intervala. Please pay attention to your ScoreBwents.
