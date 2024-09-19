@@ -1,0 +1,13 @@
+1.png
+COMPO V 3 SCREEN
+image.ixt
+httpcloudraiser-dev3-lyon2024-1995
+test.pem
+File
+Edit
+View
+A explanation for different points of the architecture:
+Overall system architecture on AWS
+Services for front-end hosting like Cloudfront, 53 and WAF
+	⁃	﻿﻿Scalability and performance considerations using serverless options like Lambda, ElastiCache Serverless for Redis and DynamoDB for handling 15000+ users. Security measures using GuardDuty, Security Hub, Macie, Inspector, Config
+	⁃	﻿﻿Observability points using Cloudwatch and X-Ray Disaster rea very and high availability plans using Route53 and AWS Backup Integration of front-end and back-end components using API Gateway DevOps and CI/CD processes using CodePipeline, Cloudformation and CodeBuild
